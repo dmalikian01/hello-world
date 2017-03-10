@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:human="http://www.dmalikian.com/"
+xmlns:human1="http://www.mhartfield.com/">
+
+
+<rdf:Description 
+  rdf:about="http://www.dmalikian.com/">
+	<human:firstName>Derek</human:firstName>
+	<human:lastName>Malikian</human:lastName>
+	<human:interest>Semantic Web</human:interest>
+	<human:spouse rdf:resource="http://www.mhartfield.com/" />	
+</rdf:Description>
+
+<rdf:Description
+  rdf:about="http://www.mhartfield.com/">
+	<human1:firstName>Monique</human1:firstName>
+	<human1:lastName>Hartfield</human1:lastName>
+	<human1:interest>Nursing</human1:interest>
+	<human1:spouse rdf:resource="http://www.dmalikian.com/" />
+
+</rdf:Description>
+
+</rdf:RDF>
