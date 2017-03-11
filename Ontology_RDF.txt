@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:u="http://www.example.org/univ#"
+	xml:base="http://www.example.org/univ">
+
+	<rdfs:Class rdf:ID="Person">
+	</rdfs:Class>
+
+	<rdfs:Class rdf:ID="Course">
+	</rdfs:Class>
+
+	<rdfs:Class
+	  	rdf:about="http://www.example.org/univ#Student">
+		<rdfs:subClassOf rdf:resource="#Person"/>
+	</rdfs:Class>
+
+	<rdfs:Class
+		rdf:about="http://www.example.org/univ#Professor">
+		<rdfs:subClassOf rdf:resource="#Person"/>
+	</rdfs:Class>
+
+	<rdf:Property
+		rdf:about="http://www.example.org/univ#takes">
+		<rdfs:domain rdf:resource="#Student"/>
+		<rdfs:range rdf:resource="#Course"/>
+	</rdf:Property>
+
+	<rdf:Property
+		rdf:about="htt://www.example.org/univ#teaches">
+		<rdfs:domain rdf:resource="#Professor"/>
+		<rdfs:range rdf:resource="#Course"/>
+	</rdf:Property>
+
+	<rdf:Property
+		rdf:about="http://www.example.org/univ#knows">
+		<rdfs:domain rdf:resource="#Professor"/>
+		<rdfs:range rdf:resource="#Student"/>
+	</rdf:Property>
+
+	<rdf:Property
+		rdf:about="http://www.example.org/univ#advises">
+		<rdfs:subPropertyOf rdf:resource="#knows"/>
+	</rdf:Property>
+
+	<u:Professor rdf:ID="Peter">
+		<u:teaches rdf:resource="#CSC101"/>
+		<u:teaches rdf:resource="#CSC201"/>
+		<u:advises rdf:resource="#Sam"/>
+	</u:Professor>
+
+	<u:Student rdf:ID="Sam">
+		<u:takes rdf:resource="#CSC101"/>
+		<u:takes rdf:resource="#CSC201"/>
+	</u:Student>
+
+
+</rdf:RDF>
+		
